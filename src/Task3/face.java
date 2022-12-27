@@ -1,3 +1,5 @@
+package Task3;
+
 import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -36,12 +38,6 @@ Scanner sc = new Scanner(System.in);
             System.out.println("\n.....................................................................................................");
             while (rs2.next()){
 
-//                String a = rs2.getString(1);
-//                String b = rs2.getString(2);
-//                String c = rs2.getString(3);
-//                String d = rs2.getString(4);
-//                String e = rs2.getString(5);
-//                String f = rs2.getString(6);
 
                 String a = rs2.getString("Account_No");
                 String b = rs2.getString("Credit");
