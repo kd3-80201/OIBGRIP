@@ -14,6 +14,10 @@ public class AtmPhase {
             Scanner sc = new Scanner(System.in);
             try {
                 // Connecting to MySQL Workbench
+                // here we have established a connection with MySQL workbench using local host port no: 3306
+                // and the username is root and password is AfnanBaig@123
+                // all the data is being saved in a schema called as atm_interface
+
                 conn = DriverManager.getConnection("JDBC:mysql://localhost:3306/atm_interface", "root", "AfnanBaig@123");
                 st = conn.createStatement();
             } catch (SQLException e) {throw new RuntimeException(e);}
@@ -28,9 +32,9 @@ public class AtmPhase {
             System.out.println("3. Quit\n");
             System.out.println("Choose an Option ");
 
-
             int input = sc.nextInt();
-            if (input == 1){
+
+            if (input == 1){             // if user choose to log in
                 System.out.println("Enter Account No");
                 int ac = sc.nextInt();
 
@@ -40,13 +44,14 @@ public class AtmPhase {
                 try {
                     rs = st.executeQuery("select * from account where Account_No = '"+ac+"';"); // Getting values from the SQL Table
                     while (rs.next()){
-                        u = rs.getInt("Account_No");
-                        p = rs.getInt("Pin");
+                        u = rs.getInt("Account_No"); // Account no will stay in variable u
+                        p = rs.getInt("Pin");        // Pin will stay in variable p
+
                     }
                     if (ac == u && pn == p) { // if user is valid this condition will take him/her to the Bank Interface
 
                         System.out.println("============================================================");
-                        System.out.println("||                 Welcome To Public Bank                 ||");
+                        System.out.println("||                 Welcome To Public ATM                  ||");
                         System.out.println("============================================================\n");
 
                         System.out.println("1. Transaction History");
@@ -59,9 +64,10 @@ public class AtmPhase {
 
                         System.out.println("Choose an Option");
 
-                        int ch = sc.nextInt();
                         face fc = new face();
-                        switch (ch) {
+
+                        int ch = sc.nextInt();
+                        switch (ch) {               // According to user's choice he will be taken there
                             case 1 -> fc.Transaction(u);
                             case 2 -> fc.Withdraw(u);
                             case 3 -> fc.Deposit(u);
@@ -72,23 +78,25 @@ public class AtmPhase {
                         }
                     }
                     else {
-                        System.out.println("Wrong Credentials\n");
+                        System.out.println("Wrong Credentials!\n");
                     }
                 } catch (SQLException e) {throw new RuntimeException(e);}
 
-            } else if (input == 2) { // New user will register here
+            } else if (input == 2) { // if user choose to register
 
                 Scanner sc1 = new Scanner(System.in);
 
-                System.out.println("Enter Your Name");
+                System.out.println("Enter Name");
                 String na = sc1.nextLine();
 
-                System.out.println("Enter Your Age");
+                System.out.println("Enter Age");
                 int age = Integer.parseInt(sc1.nextLine());
 
-                // I face the problem here while running this programme because in the
-                // nextLine() method it skips the input to be read, and takes the input of Age in place of Name.
-                // Hence,I did the syntax as Read the complete line as String and convert it to integer.
+                // I face the problem here while running this programme because
+                // the Scanner.nextInt method does not read the newline character in your input created by hitting "Enter"
+                // and so the call to Scanner.nextLine returns after reading that newline.
+                // Hence,I did the syntax as Read the complete line as String and convert it into integer.
+                //You will encounter the similar behaviour when you use Scanner.nextLine after Scanner.next()
 
                 System.out.println("Enter Your Address");
                 String add = sc1.nextLine();
@@ -96,6 +104,7 @@ public class AtmPhase {
 
                 System.out.println("Enter Your Mobile No");
                 double num = sc1.nextDouble();
+
 
                 System.out.println("Enter Pin (In Digits)");
                 int pi = sc1.nextInt();
@@ -109,18 +118,18 @@ public class AtmPhase {
                     rs2.next();
                     a = (rs2.getInt("Account_No")) + 1;  // This query will take the last account number of user and add 1 to it
 
-                    //System.out.println(a);
 
                     String save = "INSERT INTO account (Account_No,User_Name,Age,Address,Mobile_No,Pin,Balance) VALUES (" + a + ",'"+na+"',"+age+",'"+add+"',"+num+","+pi+","+de+");";
-                    st.executeUpdate(save); //
+                    st.executeUpdate(save); // All information will be saved in table called as account
 
                     System.out.println("Registration has completed ! \nAccount No of holder: "+a);
                 } catch (Exception e) {throw new RuntimeException(e);}
 
-                // now have to add the account number which is going to take as you have to take the previous account info and the add +1 to it
-
             } else if (input == 3) {
                 System.exit(0);
+            }
+            else {
+                System.out.println("Choose correct option!\n");
             }
         }
     }

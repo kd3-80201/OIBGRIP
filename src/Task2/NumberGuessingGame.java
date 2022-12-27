@@ -29,7 +29,7 @@ public class NumberGuessingGame {
             System.out.println("Input the values accordingly!!! ");
         }
         int value = end - start;
-        int ch = r.nextInt(value) + start;
+        int ch = r.nextInt(value) + start; //formula to take random number between start and end
         values(ch,start,end);
     }
 
@@ -41,10 +41,10 @@ public class NumberGuessingGame {
         while(attempt >= 0 && !tr) {
             System.out.println("\nPick a number between "+start+" to "+end);
             int input = sc.nextInt();
-            if (input == ch) {
+            if (input == ch) {  // if the condition is true it will react
 
                 if (attempt == 9){
-                    System.out.println("Epic !!! you've won the game, you scored 100 ");
+                    System.out.println("Epic !!! you've won the game on your first attempt, you scored 100 ");
 
                 } else if (attempt == 0) {
                     System.out.println("Woah Congratulations!!! you've won the game at the edge, you scored 10 out of 100");
@@ -54,21 +54,21 @@ public class NumberGuessingGame {
                         " attempts\nyou've Scored " + attempt * 10 + " out of 100");
                 }
                 tr = true;
-            } else if (input > ch) {
+            } else if (input > ch) {  // if input value is greater than random number
                 System.out.println("  _______________________________________________");
                 System.out.println("|| Entered value is higher than generated number ||");
                 System.out.println("|| Number of attempt left: " + attempt);
                 --attempt;
-            } else {
+            } else {                  //if the input value is smaller than random number
                 System.out.println("  ______________________________________________");
                 System.out.println("|| Entered value is lower than generated number ||");
                 System.out.println("|| Number of attempt left: " + attempt);
                 --attempt;
             }
 
-            if (tr) {
-                System.out.println("\nDo you wish to play again? Type: [Yes/No]");
-                String s = sc.next().toUpperCase();
+            if (tr) {                 // when user won the game and wants to play again
+                System.out.println("\nDo you wish to play again? Type: [yes/no]"); // user can play game by typing yes and no by typing no
+                String s = sc.next().toUpperCase();  // text is gonna converted into uppercase in case if user typed one of the character in capital/small
                 if (s.equals("YES")) {
                     bye();
                 } else {
@@ -77,5 +77,6 @@ public class NumberGuessingGame {
             }
         }
         System.out.println("Better Luck Next Time! The Generated Number was: " + ch);
+        // if user lose the game this statement will let him know what was the number he was looking for
     }
 }
