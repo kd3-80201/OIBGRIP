@@ -161,6 +161,7 @@ public class AtmPhase {
                     st.executeUpdate(save); // All information will be saved in table called as account
 
                     st.executeUpdate("insert into transaction_table(Account_No,Credit) values ("+a+","+de+");");
+                            //Activity of account holder will be saved on transaction table
 
                     System.out.println("Registration has completed! \nAccount No of holder: "+a);
                 } catch (Exception e) {throw new RuntimeException(e);}
