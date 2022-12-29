@@ -156,8 +156,11 @@ public class AtmPhase {
                     a = (rs2.getInt("Account_No")) + 1;  // This query will take the last account number of user and add 1 to it
 
 
-                    String save = "INSERT INTO account (Account_No,User_Name,Age,Address,Mobile_No,Pin,Balance) VALUES (" + a + ",'"+na+"',"+age+",'"+add+"','"+num+"',"+pi+","+de+");";
+                    String save = "INSERT INTO account (Account_No,User_Name,Age,Address,Mobile_No,Pin,Balance) " +
+                            "VALUES (" + a + ",'"+na+"',"+age+",'"+add+"','"+num+"',"+pi+","+de+");";
                     st.executeUpdate(save); // All information will be saved in table called as account
+
+                    st.executeUpdate("insert into transaction_table(Account_No,Credit) values ("+a+","+de+");");
 
                     System.out.println("Registration has completed! \nAccount No of holder: "+a);
                 } catch (Exception e) {throw new RuntimeException(e);}

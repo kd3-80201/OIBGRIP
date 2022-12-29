@@ -12,9 +12,9 @@ Statement st2,st3,st4;
 ResultSet rs2,rs3,rs4;
 Scanner sc = new Scanner(System.in);
 
-    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-    java.util.Date date = new Date();
-    String dt = dateFormat.format(date);
+    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");     // date format of year/month/day
+    Date date = new Date();
+    String dt = dateFormat.format(date);    //live date will store in dt
 
     public face() {
         try {
@@ -24,7 +24,7 @@ Scanner sc = new Scanner(System.in);
             // all the data is saved in a schema called (atm_interface)
 
             conn2 = DriverManager.getConnection("JDBC:mysql://localhost:3306/atm_interface", "root", "AfnanBaig@123");
-            st2 = conn2.createStatement();
+            st2 = conn2.createStatement();  // putting some statements for simplification
             st3 = conn2.createStatement();
             st4 = conn2.createStatement();
 
@@ -41,7 +41,7 @@ Scanner sc = new Scanner(System.in);
             System.out.println("................................................................................................................");
             System.out.printf(" %-15s | %-15s | %-15s | %-16s | %-16s | %-16s  |","Account_No","Credit","Debit","Transaction Date","Credited To","Debited From");
             System.out.println("\n................................................................................................................");
-
+                    // displaying the table properties
             String history = "select * from transaction_table where Account_No = "+account+";";
             rs2 = st2.executeQuery(history);
                     // query to gather all information of transaction table according to given account no

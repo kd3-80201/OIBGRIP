@@ -47,10 +47,10 @@ public class NumberGuessingGame {
                     System.out.println("Epic !!! you've won the game on your first attempt, you scored 100 ");
 
                 } else if (attempt == 0) {
-                    System.out.println("Woah Congratulations!!! you've won the game at the edge, you scored 10 out of 100");
+                    System.out.println("Woah Congratulations !!! you've won the game at the edge, you scored 10 out of 100");
 
                 } else {
-                System.out.println("Victory!!! You won the game in " + (10 - attempt) +
+                System.out.println("Victory!!! you won the game in " + (10 - attempt) +
                         " attempts\nyou've Scored " + attempt * 10 + " out of 100");
                 }
                 tr = true;
