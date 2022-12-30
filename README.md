@@ -23,7 +23,7 @@ Zip file of database: [dumps.zip](https://github.com/mirzaAfnanBaig/OIBGRIP/file
 ##This project is done in the code editer name as Intellij Idea IDE
 you can download code editor on the web {Download Community edition Intellij idea}
 
-#To ineract java code with SQL there's a JAR file that you have to add into Intellij Idea 
+#To interact java code with SQL there's a JAR file that you have to add into Intellij Idea 
 *how to add JAR file
 1. Open Intellij
 2. Click on file 
