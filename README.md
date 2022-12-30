@@ -16,21 +16,23 @@ The second project at Oasis Infobyte was to develop an ATM interface on which a 
 #how to implement code into your PC
 
 - To use this ATM Interface fully you must have a MySQL Workbench to store and retrieve the data
+- 
 - SQL can be downloaded on the web 
+
 - after installing SQL you have to establish a connection and keep the username and password
 
-#Download this dumps.zip file i have already saved both of table [account] or [transaction_table].
+- Download this dumps.zip file i have already saved both of table [account] or [transaction_table].
 
-Zip file of database: [dumps.zip](https://github.com/mirzaAfnanBaig/OIBGRIP/files/10324276/dumps.zip)
+- Zip file of database: [dumps.zip](https://github.com/mirzaAfnanBaig/OIBGRIP/files/10324276/dumps.zip)
 
-#open MySQL go to server and import this file, yess! you will get the file
+- Open MySQL go to server and import this file, yess! you will get the file
  
-#This project is done in the code editer name as Intellij Idea IDE
+- This project is done in the code editer name as Intellij Idea IDE
 
-#You can download code editor on the web {Download Community edition Intellij idea}
+- You can download code editor on the web {Download Community edition Intellij idea}
 
-#To interact Java code with SQL there's a JAR file that you have to add into Intellij Idea. 
-Download Jar Zip file :[mysql-connector-java-8.0.28.zip](https://github.com/mirzaAfnanBaig/OIBGRIP/files/10324631/mysql-connector-java-8.0.28.zip)
+- To interact Java code with SQL there's a JAR file that you have to add into Intellij Idea. 
+- Download Jar Zip file :[mysql-connector-java-8.0.28.zip](https://github.com/mirzaAfnanBaig/OIBGRIP/files/10324631/mysql-connector-java-8.0.28.zip)
 
 #how to add JAR file
 
