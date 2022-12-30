@@ -16,7 +16,7 @@ The second project at Oasis Infobyte was to develop an ATM interface on which a 
 #how to implement code into your PC
 
 - To use this ATM Interface fully you must have a MySQL Workbench to store and retrieve the data
-- 
+
 - SQL can be downloaded on the web 
 
 - after installing SQL you have to establish a connection and keep the username and password
